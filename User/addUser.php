@@ -13,19 +13,18 @@ function addUser(){
         ];
 
     }else{
-        // đã nhập username rồi ==> lưu vào CSDL
+
         try {
 
             $stmt =  $objConn->prepare(
                 "INSERT INTO tb_user (username,passwd,email,fullname) VALUES (:username,:passwd,:email,:fullname);");
 
-            // gán tham số cho câu lệnh
             $stmt->bindParam(":username", $username );
             $stmt->bindParam(":passwd", $passwd );
             $stmt->bindParam(":email", $email );
             $stmt->bindParam(":fullname", $fullname );
 
-            // thực thi
+
             $stmt->execute();
 
             $dataRes =[

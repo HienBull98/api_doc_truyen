@@ -5,7 +5,7 @@ function addComment(){
     $id_truyen = $_POST['id_truyen'];
     $id_user = $_POST['id_user'];
     $noi_dung = $_POST['noi_dung'];
-    $ngay_gio = $_POST['ngay_gio'];
+    $ngay_gio = date('Y-m-d H:i:s');
     if(empty ($id_user) ){
         $dataRes =[
             'status'=>0,
